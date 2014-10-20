@@ -20,6 +20,10 @@ We can add the attributes to our model in the command line, like so
 ```ruby
 rails generate model question title:string description:text
 ```  
+or a shortcut:
+```ruby
+rails g model question title:string description:text
+```
 ***note***: I do not have to explicitly say, I need an id. One will be created automatically.  
 ***noteII***: The opposite of 'generate' is destroy. So if I wanted to destroy this model, I would use `rails destroy model question`   
   
