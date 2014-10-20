@@ -5,7 +5,7 @@ However, we as humans tend to think of everything as an object. This is why lang
 
 I get into a car, which is an object. I turn on the car, which is a method on the object. Object interacting with each other is what OOP is all about.
 
-Most modern languages are object oriented. Php, Java, Scala, etc.  
+Most modern languages are object oriented. Php, Java, Scala, Go etc.  
   
 __Some Differences between a Class and an Object__  
 A cookie is an object. An easy way to create many cookies is with a cookie cutter. A cookie cutter is like a class. I should create a class once, then I can create many objects. So, we use a cookie cutter to create many cookies.  
