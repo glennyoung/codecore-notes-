@@ -47,7 +47,7 @@ Then make a new comment in rails c.
 comment = Comment.new
 comment.valid?
 ```  
-Get the test ready with `rake db:test:prepare` Then run the test in terminal with `rspec spec`. This should give you a failing test! Because, our comment model can be created without a body. Now, we can open our comment model, and add validation.  
+Get the test ready with `rake db:test:prepare`. On versions of rails newer than 4.1.0 this is done automatically and running it will only give a deprecation warning. Then run the test in terminal with `rspec spec`. This should give you a failing test! Because, our comment model can be created without a body. Now, we can open our comment model, and add validation.  
 ```ruby
 # app/models/comment.rb
 class Comment < ActiveRecord::Base
