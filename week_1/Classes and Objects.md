@@ -1,4 +1,4 @@
-# Classes & Objects  
+# Classes & Objects
 Before object oriented programming, there was what's called 'Procedural Programming'. If I wanted to describe the mundane takss of my day to day routine, I could do so using procedures, such as "I wake up. I brush my teeth, etc."
 
 However, we as humans tend to think of everything as an object. This is why languages like Ruby take objects to the extreme by making everything objects. Object oriented programming is good, because it makes thing easier to understand, and easier to extend. I can just include a library and have access to many more objects and methods.
@@ -61,7 +61,7 @@ class Cookie
   end
   
   def eat
-    "Nom Nom Nom"
+    "Nom Nom Nom Nom"
   end
 end
 ```  
