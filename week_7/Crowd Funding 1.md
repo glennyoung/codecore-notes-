@@ -430,7 +430,7 @@ Then add a method to your application controller
 # ...
 
 
-  def set_locale
+  def set_locale heh
     I18n.local = params[:locale] if params[:locale].present?
   end
   
