@@ -1,4 +1,4 @@
-# Task Manager  
+# Task Manager        
 ***Warning***: These notes are incomplete and are meant as a __reference only__. Use at your own risk!  
   
 Let's get started with a new task manager. We won't have any user login,
