@@ -1,0 +1,36 @@
+Routes formula
+
+URL_verb '/path/' => 'controller#method', as: :new_path
+
+
+URL_verb      controller_method
+  get     ->    new, index, show, edit
+  post    ->    create
+  patch   ->    update
+  delete  ->    destroy
+
+---------------------------------------------------------------
+
+Controllers formula
+
+def strong_params #started with rails 4
+  params.require(:model).permit(:column, :column2, ...)
+end
+
+:model      ->  generated (created) model name
+:column(n)  ->  generated (created) column(s)
+
+---------------------------------------------------------------
+
+Views
+
+controller_method.html.erb
+where controller_method is a get BUT
+  the other ones can have them to.
+
+---------------------------------------------------------------
+
+Steps.
+1. Change the route
+2. Add a controller
+3. Add a view (faster if done in terminal using touch)
