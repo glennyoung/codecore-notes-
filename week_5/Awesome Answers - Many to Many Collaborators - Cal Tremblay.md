@@ -34,7 +34,9 @@ We don’t need a controller on this case since all we do is create/edit on the 
 ```
 
 User.all: list of all objects that u want to display
+
 :id: the value we want to send to the server
+
 :full_name: display function
 
 
