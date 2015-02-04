@@ -1,4 +1,4 @@
-**
+*Many to Many - Collaborators*
 
 (project)1—n(members)n—1(users)
 
@@ -50,9 +50,9 @@ end
 ```
 
 **Questions controller**
-`
+```ruby
 add {projectmember_ids: []} to strong params or else it will not save
-`
+````
 
 :: MANY TO MANY w/model referencing itself
 
@@ -76,7 +76,7 @@ belongs_to :follower, class_name: “User”
 has_many :followings, dependent: :destroy
 has_many :followers, through :followings
 
-has_many :inverse_followings, class_name: “Following”, foreign_key: “follower_id"
+has_many :inverse_followings, class_name: "Following", foreign_key: "follower_id"
 has_many :inverse_followers, through: :inverse_followings, source: :user
 ```
 We specify the foreign_key follower_id because we don’t want to refer user_id twice.
