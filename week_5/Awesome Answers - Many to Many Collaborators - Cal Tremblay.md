@@ -33,11 +33,9 @@ We don’t need a controller on this case since all we do is create/edit on the 
 <%= f.collection_check_boxes :projectmember_id, User.all, :id, :full_name %>
 ```
 
-User.all: list of all objects that u want to display
-
-:id: the value we want to send to the server
-
-:full_name: display function
+- User.all: list of all objects that u want to display
+- :id: the value we want to send to the server
+- :full_name: display function
 
 
 ** user.rb **
