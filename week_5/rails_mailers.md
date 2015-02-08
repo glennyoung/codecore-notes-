@@ -193,3 +193,19 @@ end
 device = Devise.new
 device.deliver
 ```
+
+
+In order for the mailer templates to work, two more files need to be added to app/views/layouts/ called mailer.text.erb and mailer.html.erb
+
+content for mailer.html.erb 
+  <html>
+    <body>
+      <%= yield %>
+    </body>
+  </html>
+  
+content for mailer.text.erb 
+  <%= yield %>
+
+regards, 
+  zeus-
