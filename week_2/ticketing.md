@@ -4,6 +4,8 @@ Start by creating a new application
 ```bash
 rails new quiz_1_solution -d postgres
 
+rails new quiz_1_solution -d postgresql -T (if you don't want test files to be added!)
+
 rails g resource support_request nam email department done:boolean message:text
 ```  
 In the migration file make the default false for done.  
