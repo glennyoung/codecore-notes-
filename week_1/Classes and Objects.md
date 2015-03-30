@@ -1,3 +1,8 @@
+"VINCE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+
+
+
+
 # Classes & Objects
 Before object oriented programming, there was what's called 'Procedural Programming'. If I wanted to describe the mundane takss of my day to day routine, I could do so using procedures, such as "I wake up. I brush my teeth, etc."
 
