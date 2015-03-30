@@ -1,4 +1,4 @@
-Routes formula
+Routes Formula
 
 URL_verb '/path/' => 'controller#method', as: :new_path
 
