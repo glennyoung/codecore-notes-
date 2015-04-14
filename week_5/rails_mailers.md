@@ -1,6 +1,6 @@
 # Rails Mailers  
 [Mandrill](http://mandrill.com/) | 
-In rails, malers are built into the framework. If you go to Gemfile.lock, you can see the gem actionmailer. In the app folder, there's a mailer folder right there. It's empty by default. So, the first step is to set up the mailer.  
+In rails, mailers are built into the framework. If you go to Gemfile.lock, you can see the gem actionmailer. In the app folder, there's a mailer folder right there. It's empty by default. So, the first step is to set up the mailer.  
   
 Let's create a file called initializers/setup_mail.rb, and put the setup information inside it.  
 ```ruby
