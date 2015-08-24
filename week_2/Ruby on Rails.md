@@ -9,7 +9,7 @@ There will also be a project for a "Project Management Tool" that will be applyi
   * has a large community
   * has many gems
   * is a well known framework  
-  * is really coool
+  * is really cool
 
 Rails was created by David Heinemeir Hansson ([DHH](https://twitter.com/dhh)) of [37 Signals](https://37signals.com/). Github uses rails, groupon, shopify, yellow pages, Basecamp, twitter (at first).  
 
