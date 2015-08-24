@@ -9,6 +9,11 @@ URL_verb      controller_method
   patch   ->    update
   delete  ->    destroy
 
+#Note from Jeff:
+#  The above can be replaced with:
+#  resources :<new controller here>
+#End
+
 ---------------------------------------------------------------
 
 Controllers formula
