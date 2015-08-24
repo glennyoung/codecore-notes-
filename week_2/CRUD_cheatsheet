@@ -8,10 +8,11 @@ URL_verb      controller_method
   post    ->    create
   patch   ->    update
   delete  ->    destroy
-Note from Jeff:
-  The above can be replaced with:
-  resources :<new controller here>
-End
+
+#Note from Jeff:
+#  The above can be replaced with:
+#  resources :<new controller here>
+#End
 
 ---------------------------------------------------------------
 
