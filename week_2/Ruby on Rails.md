@@ -1,19 +1,22 @@
 # Ruby on Rails  
-  
+
 Rails is simple, but the knowledge builds up quickly. We're going to be going over some projects. In class, we'll be covering a project called "Awesome Answers". Please try to follow along with this, as we will be continuing from where we left off, on a daily basis.  
-  
+
 There will also be a project for a "Project Management Tool" that will be applying the principles learned through exercises with "Awesome Answers."  
-  
+
 **Rails**
   * saves you a lot of time
   * has a large community
   * has many gems
   * is a well known framework  
-  
+  * is really coool
+
 Rails was created by David Heinemeir Hansson ([DHH](https://twitter.com/dhh)) of [37 Signals](https://37signals.com/). Github uses rails, groupon, shopify, yellow pages, Basecamp, twitter (at first).  
-  
-Rails is very opinionated. The core team made decisions to do things a certain way, and so there are many conventions in rails. Rails is a gem, just like Sinatra.  
-  
+
+Rails is very opinionated. The core team made decisions to do things a certain way, and so there are many conventions in rails. Rails is a gem.  
+
+There is a steep learning curve.
+
 Let's start by installing rails, if you haven't already.  
 ```bash
 gem install rails
@@ -25,7 +28,7 @@ If you specify a gem version with `~>`, it will install the latest stable versio
 gem 'rails', '~> 4.0.4'
 ```  
 Rails comes with many parts, including actionmailer, so we no longer need the Pony gem, for example.  
-  
+
 Create a new rails project called "awesome_answers", using a postgresql database.  
 ```bash
 rails new awesome_answers -d postgresql
@@ -35,14 +38,14 @@ cd into the directory rails created called "awesome_answers" and open it up in y
 cd awesome_answers
 subl .
 ```  
-  
+
 ## Files and Structure
 ```bash
 config.ru           # is where we tell the server to require our app.
 .gitignore          # here we can list files we do not want git to track, e.g. config/database.yml
 config/database.yml # if you are using postgres, or any database other than sqlite, you will need to specify your username
 ```  
-  
+
 **app**: This organizes your application components. It's got subdirectories that hold the view (views and helpers), controller (controllers), and the backend business logic (models).
 
 **app/controllers**: The controllers subdirectory is where Rails looks to find controller classes. A controller handles a web request from the user.
@@ -55,7 +58,7 @@ config/database.yml # if you are using postgres, or any database other than sqli
 
 **app/view/layouts**: Holds the template files for layouts to be used with views. This models the common header/footer method of wrapping views. In your views, define a layout using the `layout :default` and create a file named default.rhtml. Inside default.rhtml, call `<% yield %>` to render the view using this layout.  
 ref: [tutorialspoint](http://www.tutorialspoint.com/ruby-on-rails/rails-directory-structure.htm)  
-  
+
 ## database.yml
 ```ruby
 # config/database.yml
@@ -72,7 +75,7 @@ test:
   encoding: unicode
   database: awesome_answers_test
   pool: 5
-  username: my_mac_username           
+  username: my_mac_username
   password:
 
 # production:                           # because we will deploy to Heroku, which sets its own database, we don't need this
@@ -94,7 +97,7 @@ Make sure you are in your app's directory "awesome_answers" and run the command 
 [2014-03-24 10:09:23] INFO  WEBrick::HTTPServer#start: pid=90355 port=3000
 ```  
 If you get an error stating the databse does not exist, run `rake db:create`.  
-  
+
 ## MVC
 MVC resources: [video](https://www.youtube.com/watch?v=3mQjtk2YDkM) | [Coding Horror](http://blog.codinghorror.com/understanding-model-view-controller/) | [Better Explained](http://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/)  
 In Sinatra, we had our routes in our controllers, when we did something like  
@@ -108,18 +111,18 @@ In Rails, we have a separate file for routes called `routes.rb`
 
 **Model**  
 The model represents the information and the data from the database. It is as independent from the database as possible (Rails comes with its own O/R-Mapper, allowing you to change the database that feeds the application but not the application itself). The model also does the validation of the data before it gets into the database. Most of the time you will find a table in the database and an according model in your application.  
-  
+
 **View**  
 The view is the presentation layer for your application. The view layer is responsible for rendering your models into one or more formats, such as XHTML, XML, or even Javascript. Rails supports arbitrary text rendering and thus all text formats, but also includes explicit support for Javascript and XML. Inside the view you will find (most of the time) HTML with embedded Ruby code. In Rails, views are implemented using ERb by default.  
-  
+
 **Controller**  
 The controller connects the model with the view. In Rails, controllers are implemented as ActionController classes. The controller knows how to process the data that comes from the model and how to pass it onto the view. The controller should not include any database related actions (such as modifying data before it gets saved inside the database). This should be handled in the proper model.  
-  
+
 **Helper**  
 When you have code that you use frequently in your views or that is too big/messy to put inside of a view, you can define a method for it inside of a helper. All methods defined in the helpers are automatically usable in the views.  
-  
+
 ref: [Rails Wiki](http://en.wikibooks.org/wiki/Ruby_on_Rails/Getting_Started/Model-View-Controller)  
-  
+
 ## Convention over Configuration  
 Rails goes with the motto "Convention over Configuration". So, instead of having to spend a lot of time configuring options, we follow a set of conventions.  
 For example, in Sinatra, we might have something like  
@@ -130,11 +133,11 @@ get "/" do
   erb :index          # Here we have to state erb :index to render this view
 end  
 
-# Rails 
+# Rails
 def index             # In Rails, we just define a method for each view in its controller
 end
 ```  
-  
+
 ## Gemfile & Bundler
 Our Gemfile stores all the gems we use in our application.  
 ```ruby
@@ -192,7 +195,7 @@ rails s
 ```  
 ## REST  
 Routes in rails use [RESTful architecture](http://en.wikipedia.org/wiki/Representational_state_transfer} (Representational state transfer). Let's look at what this means.  
-  
+
 Inside your app's directory, in the terminal type `rails generate controller home`. Then, open up your routes.rb file.  
 ```ruby
 # config/routes.rb
@@ -208,7 +211,7 @@ get is an HTTP verb.
   * POST
   * PATCH/PUT
   * DELETE  
-  
+
 Add a method to your home_controller called about.  
 
 ```ruby
@@ -218,7 +221,7 @@ class HomeController < ApplicationController
   def about
     render text: "Welcome"
   end
-  
+
 end
 ```  
 Here we are just rendering the text "Welcome". However, by default, the method name in the controller will look for a view.erb file. So, let's set one up. Create a page called about.erb in your app/views/[controller] directory.  
@@ -235,7 +238,7 @@ class HomeController < ApplicationController
 
   def about
   end
-  
+
 end
 ```  
 Let's add an FAQ.  
@@ -250,10 +253,10 @@ class HomeController < ApplicationController
 
   def about
   end
-  
+
   def faq
   end
-  
+
 end
 ```  
 Create an faq.erb file in your views directory  
@@ -269,7 +272,7 @@ class HomeController < ApplicationController              # our home contoller i
 
   def about
   end
-  
+
   def faq
   end
 
@@ -285,7 +288,7 @@ class ApplicationController < ActionController::Base
 end
 ```  
 `protect_from_forgery` makes it so you can't easily put something or post something, without an authorization token. Basically by having this in the application_controller, all my controllers have this as long as they *inherit from this controller*.  
-  
+
 ```ruby
 # config/environments/production.rb
 AwesomeAnswers::Application.configure do
@@ -396,37 +399,37 @@ Js:
 TestUnit:
   test_unit:plugin
 
-```   
+```
 
 Then add some routes to the routes.rb  
 ```ruby
 # config/routes.rb
 # ...
   get "/help" => "help#index"
-  
+
 #...
 ```  
 
 Add an index method to the help controller
 ```ruby
 class HelpController < ApplicationContoller
-  
+
   def index
   end
 
 end  
 ```  
-  
+
 Add an index.erb inside a help directory to the views diretory  
 ```ruby
 app/views/help/index.erb
 <h1>Welcome to the help section</h1>
-```   
-  
+```
+
 We can access all the routes available in our app if we go to [localhost:3000/rails/info/routes](http://localhost:3000/rails/info/routes)  
-  
+
 We can see in our routes that rails automatically generates 'helpers' for us. Rather than /about_us, we now have a rails method we can use to access this route through our app called `about_us_path`.  
-  
+
 We use this to create links, for example add a navigation section
 ```ruby
 # app/views/layouts/application.html.erb
@@ -442,8 +445,8 @@ We use this to create links, for example add a navigation section
 
 # Add a navigation section here
 
-  <%= link_to "About Us", about_us_path, class: "btn btn-primary", id: "about" %> | 
-  <%= link_to "FAQ", faq_path %> | 
+  <%= link_to "About Us", about_us_path, class: "btn btn-primary", id: "about" %> |
+  <%= link_to "FAQ", faq_path %> |
   <%= link_to "Help", help_path %>
 
 <%= yield %>
@@ -454,19 +457,19 @@ We use this to create links, for example add a navigation section
 ```  
 ## Rails Resources  
 
-If I have a resource called post, it will be a model Post.rb, and a controller posts_controller.rb. Models are given singular names, and controllers are given the plural of the model, by convention, and this is how rails works.    
+If I have a resource called post, it will be a model Post.rb, and a controller posts_controller.rb. Models are given singular names, and controllers are given the plural of the model, by convention, and this is how rails works.
 Let's start by creating a controller: `rails generate controller questions`.  
-  
+
 To show all the questions, we can define a method called index in the questions_controller.  
 ```ruby
 class QuestionsController < ApplicationController
 
   def index
   end
-  
+
 end
 ```  
-And add a route 
+And add a route
 ```ruby
 # config/routes.rb
 AwesomeAnswers::Application.routes.draw do
@@ -490,7 +493,7 @@ Add an index.html.erb page to the view
 
 
 ```  
-If I want to create a question, I need to define a method create. What should the route for this be? `post "/questions => "questions#index"` 
+If I want to create a question, I need to define a method create. What should the route for this be? `post "/questions => "questions#index"`
 ```ruby
 # config/routes.rb
 AwesomeAnswers::Application.routes.draw do
@@ -526,7 +529,7 @@ AwesomeAnswers::Application.routes.draw do
   get "/questions/:id" => "questions#show"
 
 end
-```   
+```
 And of course, then define the `show` method in the questions_controller.  
 ```ruby
 # app/controllers/questions_controller.rb
@@ -537,7 +540,7 @@ class QuestionsController < ApplicationController
 
   def create
   end
-  
+
   def show
     render text: "The id is: #{params[:id]}"     #we can get the question based on it's ID. This is available through params
   end
@@ -564,16 +567,16 @@ AwesomeAnswers::Application.routes.draw do
   get "/questions/:id/edit" => "questions#edit"
   match "/questions/:id"    => "questions#update", via: [:put, :patch]
   delete "/questions/:id"   => "questions#destroy"
-  
-  
+
+
   ### Note, we can create all these routes by adding the simple line
   resources :questions
-  
+
   ### to limit the routes available to questions, we can add only
   resources :questions, only: [:index, :new, :create]
 
 end
-```   
+```
 
 Methods
 ```ruby
@@ -604,24 +607,24 @@ end
 If I want to do something like vote on a question, I can add a path to the routes.rb such as:  
 ```ruby
 # config/routes.rb
-  resources :questions do 
+  resources :questions do
     post :vote_up, on: :member
   end
 ```  
-  
+
 This will create the route `vote_up_question_path  POST  /questions/:id/vote_up(.:format)  questions#vote_up`. We are voting up on member, because we are selecting a particular member in a collection. If want to search a collection of questions, I would add `post :search, on: :collection` to the routes resource. A collection doesn't require an id, whereas a member does.  
 ```ruby
 # config/routes.rb
-  resources :questions do 
+  resources :questions do
     post :vote_up, on: :member
     post :search, on: :collection
   end
-```   
+```
 This creates the route `search_questions_path  POST  /questions/search(.:format)   questions#search`.  If we want to have a series of methods on a member or collection, he's the syncax.  
 ```ruby
 # config/routes.rb
   resources :questions, only: [:index, :create, :show] do     # in contrast to only, we could use except: [:update, :create], etc.
-    member do 
+    member do
       post :vote_up
       post :vote_down
     end
