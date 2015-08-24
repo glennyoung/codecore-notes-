@@ -1,4 +1,4 @@
-[jBuilder gem](https://github.com/rails/jbuilder) | [mustache.js](https://github.com/janl/mustache.js/)   
+[jBuilder gem](https://github.com/rails/jbuilder) | [mustache.js](https://github.com/janl/mustache.js/)
 
 ```ruby
 # Gemfile
@@ -10,6 +10,7 @@ rails generate rspec install
 ```
 ```ruby
 # spec/spec_helper.rb
+# A new comment 
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
@@ -90,7 +91,7 @@ FactoryGirl.define do
 
 end
 ```
-Add a path in your routes to have campaigns 
+Add a path in your routes to have campaigns
 ```ruby
 # config/routes.rb
 
@@ -158,7 +159,7 @@ Let's make a new application!
 ```
 rails new crowdfunding_client -T
 ```
-Include the [mustache js library](https://raw.githubusercontent.com/janl/mustache.js/master/mustache.js). 
+Include the [mustache js library](https://raw.githubusercontent.com/janl/mustache.js/master/mustache.js).
 ```erb
 <!-- app/views/welcome/index.html.erb -->
 
