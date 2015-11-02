@@ -5,7 +5,7 @@
 In Ruby, we define an aray simply using square brackets []  
 ```ruby
 a = [1, 59, "Hey", "Yo", 200]
-a[2]                  # "Hey"
+a[2]                  # "Hey!!"
 ```  
 You can put anything inside an array  
 ```ruby
@@ -16,7 +16,7 @@ my_first_array.first  # 1
 my_first_array.last   # "hey"
 
 ```  
-  
+
 You can have an array inside an array  
 ```ruby
 my_array = [1, "Hello", [1, 2, 3], "Hey", nil]
@@ -29,7 +29,7 @@ To push elements into an array in ruby, we use `<<`   or `push`
 ```ruby
 my_array = [1,2,3]
 my_array << 4         # [1, 2, 3, 4]
-my_array.include? 5   # false 
+my_array.include? 5   # false
 ```  
 1.) Find out how to get the number of Array elements in two different ways.  
 2.) Find out how to turn a multi-dimensional Array into a one dimensional Array  
@@ -40,7 +40,7 @@ my_array.length
 my_array.count
 my_array.size
 
-3 2.) 
+3 2.)
 my_array = [1,2,3,[4,5,6,[7,8,9],10],11,12]
 my_array.flatten
 ```  
@@ -91,7 +91,7 @@ arr.each do |outer|
   end
 end
 ```  
-7.) 
+7.)
 ```ruby
 my_array.map {|x| x * x}
 
@@ -355,7 +355,7 @@ def my_method(piece_of_code)
   piece_of_code.call
   puts "After"
 end
-  
+
 my_method(my_lambda)
 my_method(my_proc)
 ```  
@@ -386,7 +386,7 @@ end
 ```  
 # Exceptions  
 Exceptions happen when the user does something that shouldn't be done. For example, when we try to divide by zero, we get `ZeroDivisionError: divided by 0`. Or, if we try to call variable b, which does not exist, we get `NameError: undefined local variable or method 'b' for main:Object`. If we try to call a method on nil that doesn't exist nil.asdasd, we get `NoMethodError: undefined method 'asdasd' for nil:NilClass`.  
-  
+
 If we want to raise a specific error, we can by using raise. Try `raise ZeroDivisionError` in IRB.
 ```ruby
 # Handling Exceptions
@@ -439,7 +439,7 @@ end
 
 number > 10 ? puts "Your number is large" : puts "Your number is small"
 
-puts number > 10 ?"Your number is large" : "Your number is small" 
+puts number > 10 ?"Your number is large" : "Your number is small"
 ```  
 10.) Write FizzBuzz using a ternary operator  
 ```Ruby
@@ -534,7 +534,7 @@ end
 ```  
 __Extra Tidbits__  
 ```ruby
-# 
+#
 my_string = 100
 Float(my_string) rescue false         # 100
 
