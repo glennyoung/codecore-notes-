@@ -1,6 +1,6 @@
 # Google Maps for Rails
 [Google Maps](https://github.com/apneadiving/Google-Maps-for-Rails) |  
-Install the gmaps4rails gem
+Don't install the gmaps4rails gem. It's bad.
 ```ruby
 # Gemfile
 
@@ -29,7 +29,7 @@ Add to your assets pipeline
 geocoded_by :full_street_address
 
 ```haml
-= link_to "Nearby Campaigns", 
+= link_to "Nearby Campaigns",
 ```
 ```erb
 <div style='width: 800px;'>
@@ -117,8 +117,8 @@ end
 
 ## Services
 [Virtus](https://github.com/solnic/virtus)
-  
-Create a services folder in the app directory. We'll refactor our campaign create action to use a service object. 
+
+Create a services folder in the app directory. We'll refactor our campaign create action to use a service object.
 ```ruby
 # app/controllers/ccampaigns_controller.rb
 
@@ -139,7 +139,7 @@ Create a services folder in the app directory. We'll refactor our campaign creat
 
 # ...
 
-``` 
+```
 ```ruby
 # app/services/campaign/create_campaign.rb
 
