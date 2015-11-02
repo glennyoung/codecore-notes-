@@ -1,7 +1,7 @@
 # Building a Rails CRUD
 
-Adding a line to rails_crud  
-  
+<!-- Adding a line to rails_crud   -->
+
 For the questions index page create an instance variable with all questions.  
 
 ```ruby
@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    render text: "A new question" 
+    render text: "A new question"
   end
 
   def destroy
@@ -33,19 +33,19 @@ class QuestionsController < ApplicationController
 
 end
 ```  
-  
+
 On the index.html.erb set some items to display each question, including title, description, and created_at using Ruby's [strftime](http://www.ruby-doc.org/core-2.1.1/Time.html#method-i-strftime) method.  
 ```erb
 # app/views/questions/index.html.erb
 <h1>Listing All Questions</h1>
 
 <% @questions.each do |question| %>
-  
+
     <h2><%= question.title %></h2>
     <p><%= question.description %></p>
     <p>Created On: <%= question.created_at.strftime("%Y-%b-%d") %></p>
     <hr>
-    
+
 <% end %>
 
 ```  
@@ -70,12 +70,12 @@ Now we need a view called 'new' to enter the information for our new question.
 
   <%= f.label :title %>
   <%= f.text_field :title %>
-  
+
   <%= f.lable :description %>
   <%= f.text_area :description %>
-  
+
   <%= f.submit %>
-  
+
 <% end %>
 
 ```  
@@ -115,7 +115,7 @@ end
 
 ```  
 Our logs have a lot of entries for accessing html/css files. We don't really care about those, so to remove them, you can just add `gem quiet_assets` to your Gemfile.  
-  
+
 Let's refactor that create method to be a little better.  
 ```ruby
 # app/controllers/questions_controller.rb  
@@ -124,10 +124,10 @@ Let's refactor that create method to be a little better.
 
 def create
   #@question = Question.new(params[:question]) # We used to be able to do this, but there were some security issues.
-  # now, in Rails 4, the default action is to prevent everything, rather than allowing. 
+  # now, in Rails 4, the default action is to prevent everything, rather than allowing.
   question_attributes = params.require(:question).permit([:title, :description])
   @question = Question.new(question_attributes)
-  
+
   if @question.save
     redirect_to questions_path, notice: "Your question was created successfully."
   else
@@ -161,12 +161,12 @@ Let's add a way to display errors on our new question form:
 
   <%= f.label :title %>
   <%= f.text_field :title %>
-  
+
   <%= f.lable :description %>
   <%= f.text_area :description %>
-  
+
   <%= f.submit %>
-  
+
 <% end %>
 
 ```  
@@ -184,22 +184,22 @@ Set the flash notices to display through the application layout.
 </head>
 <body>
   <div class="container">
-    
+
     <nav class="nav-main">
       <%= link_to "About Us", about_us_path, class: "btn btn-default nav-btn", id: "about" %>
       <%= link_to "FAQ", faq_path, class: "btn btn-default nav-btn" %>
       <%= link_to "Help", help_path, class: "btn btn-default nav-btn" %>
       <%= link_to "New Question", new_question_path, class: "btn btn-default nav-btn" %>
     </nav>
-      
+
     <% if flash[:notice] || flash[:error] %>
       <h3><%= flash[:notice] || flash[:error] %></h3>
     <% end %>
 
     <%= yield %>
-  
-    
-  
+
+
+
   </div>
 </body>
 </html>
@@ -215,7 +215,7 @@ class QuestionsController < ApplicationController
 
   def create
     #@question = Question.new(params[:question]) # We used to be able to do this, but there were some security issues.
-    # now, in Rails 4, the default action is to prevent everything, rather than allowing. 
+    # now, in Rails 4, the default action is to prevent everything, rather than allowing.
     @question = Question.new(question_attributes)
 
     if @question.save
@@ -234,15 +234,15 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new 
+    @question = Question.new
   end
 
   def destroy
     render text: "Question: #{params[:id]} has been successfully deleted."
   end
-  
+
   private
-  
+
   def question_attributes
     question_attributes = params.require(:question).permit([:title, :description])
   end
