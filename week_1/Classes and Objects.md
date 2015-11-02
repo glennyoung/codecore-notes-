@@ -4,6 +4,7 @@ ALEX SMELLS LIKE TIDE DETERGENT!!!
 -Anne
 
 
+Zaid88 was here
 
 # Classes & Objects
 Before object oriented programming, there was what's called 'Procedural Programming'. If I wanted to describe the mundane takss of my day to day routine, I could do so using procedures, such as "I wake up. I brush my teeth, etc."
@@ -13,7 +14,7 @@ However, we as humans tend to think of everything as an object. This is why lang
 I get into a car, which is an object. I turn on the car, which is a method on the object. Object interacting with each other is what OOP is all about.
 
 Most modern languages are object oriented. Php, Java, Scala, Go, C# etc.  
-  
+
 __Some Differences between a Class and an Object__  
 A cookie is an object. An easy way to create many cookies is with a cookie cutter. A cookie cutter is like a class. I should create a class once, then I can create many objects. So, we use a cookie cutter to create many cookies.  
 Or you can think of a class as a blueprint. I have one blueprint, I can build many houses.  
@@ -43,7 +44,7 @@ cookie2.object_id
 cookie.object_id
 ```  
 By convention, classes have their first letter `capitalized`, while files and methods use `snake_case`. It is advised to name the file, the same as the class. And to have 1 class per file, or 1 file per class.  
-  
+
 __1.) Build a class for Car and a class for British Columbia.__  
 (Try to put each in a different file)  
 ```ruby
@@ -66,7 +67,7 @@ class Cookie
   def bake
     "baking baking..."
   end
-  
+
   def eat
     "Nom Nom Nom Nom"
   end
@@ -80,10 +81,10 @@ cookie.bake             # "baking baking..."
 cookie.new              # "Nom Nom Nom"
 ```
 Practice writing some methods of your own.  
-  
+
 ##Public and Private Methods  
 We can add methods that are publicly accessible, but sometimes we want to have private methods within our class. Generally, we add private methods at the bottom of the class file. Actions (methods) within the class, can access the private methods, but private methods can not be called directly from outside of the class.  
-  
+
 In this case, the `bake_and_eat` method has access to the private method `eat`, so you could call `cookie.bake_and_eat` from outside the class. However, you can no longer call `cookie.eat`.  
 ```ruby
 # cookie.rb
@@ -92,14 +93,14 @@ class Cookie
   def bake
     "baking baking..."
   end
-  
+
   def bake_and_eat
     bake
     eat
   end
-  
-  private 
-  
+
+  private
+
   def eat
     "Nom Nom Nom"
   end
@@ -120,11 +121,11 @@ class Car
   def drive
     puts "driving..."
   end
-  
+
   def stop
     puts "stopping..."
   end
-  
+
   def park
     puts "parking..."
   end
@@ -138,21 +139,21 @@ class Car
   def drive
     puts "driving..."
   end
-  
+
   def stop
     puts "stopping..."
   end
-  
+
   def park
     puts "parking..."
   end
-  
+
   private
-  
+
   def pump_gas
     puts "pumping gas."
   end
-  
+
   def ignite_engine
     puts "starting the car."
   end
@@ -167,21 +168,21 @@ class Car
     ignite_engine
     puts "driving..."
   end
-  
+
   def stop
     puts "stopping..."
   end
-  
+
   def park
     puts "parking..."
   end
-  
+
   private
-  
+
   def pump_gas
     puts "pumping gas."
   end
-  
+
   def ignite_engine
     puts "starting the car."
   end
@@ -221,21 +222,21 @@ class Car
     ignite_engine
     puts "driving..."
   end
-  
+
   def stop
     puts "stopping..."
   end
-  
+
   def park
     puts "parking..."
   end
-  
+
   private
-  
+
   def pump_gas
     puts "pumping gas."
   end
-  
+
   def ignite_engine
     puts "starting the car."
   end
@@ -247,23 +248,23 @@ Define a private class method, for example
 # car.rb
 class Car
   #...
-  
+
   def stop
     # max_speed             # will not work
     Car.max_speed           # If you need to call a class method from within a non class method, you can
     puts "stopping..."
   end
-  
+
   def self.max_speed
     absolute_speed = 100
   end
-  
+
   private
-  
+
   def self.absolute_speed
     300
   end
-  
+
   #...
 
 end
@@ -283,33 +284,33 @@ class Car
     ignite_engine
     puts "driving..."
   end
-  
+
   def stop
     puts "stopping..."
   end
-  
+
   def park
     puts "parking..."
   end
-  
+
   def stop
     puts "stopping..."
   end
-  
+
   def self.max_speed
     absolute_speed = 100
   end
-  
+
   private
-  
+
   def self.absolute_speed
     300
   end
-  
+
   def pump_gas
     puts "pumping gas."
   end
-  
+
   def ignite_engine
     puts "starting the car."
   end
@@ -326,13 +327,13 @@ class Car
     @passenger_count = passenger_count
     puts "I'm in initialize"
   end
-  
+
   #...
 
   def fuel_amount
     @fuel_amount
   end
-  
+
   #...
 
 end  
@@ -368,7 +369,7 @@ end
 ```ruby
 # computer.rb
 class Computer
-  
+
   # add an initialize method
 
 end
@@ -403,15 +404,15 @@ class Car
     @@abc = 1
     puts "I'm in initialize"
   end
-  
+
   def abc
     @@abc
   end
-  
+
   def set_abc(a)
     @@abc = a
   end
-  
+
   #...
 end
 ```  
@@ -437,7 +438,7 @@ Computer = 10           # (irb):47: warning: already initialized constant Comput
                         #  (irb):46: warning: previous definition of Computer was here
 Computer.new            # NoMethodError: undefined method `new' for 10:Fixnum
 ```
-  
+
 ## Adding attribute writers to methods  
 
 ```ruby
@@ -451,7 +452,7 @@ class Cookie
   end
 end
 ```
-  
+
 Using [attr_accessor](http://ruby-doc.org/core-2.1.0/Module.html#method-i-attr_accessor), [attr_reader](http://ruby-doc.org/core-2.1.0/Module.html#method-i-attr_reader) and [attr_writer](http://ruby-doc.org/core-2.1.0/Module.html#method-i-attr_writer)
 ```ruby
 # car.rb
@@ -465,40 +466,40 @@ class Car
     @@abc = 1
     puts "I'm in initialize"
   end
-  
+
   # attr_writer :passenger_count      # this is an eqivalent setter
   def passenger_count=(count)         # setter : used to set a value
     @passenger_count = count
   end
-  
+
   # attr_reader :passenger_count      # this is an equivalent getter
   def passenger_count                 # getter : used to get a value
     @passenger
   end
-  
+
   # attr_accessor :passenger_count    # This is both a getter and a setter
-  
+
   def abc
     @@abc
   end
-  
+
   def set_abc(a)
     @@abc = a
   end
-  
+
   #...
 end
 ```  
-8.) Build a class "Rectangle" and give it two attribute accessors: width and height. Add a method "area" that returns the area 
+8.) Build a class "Rectangle" and give it two attribute accessors: width and height. Add a method "area" that returns the area
 ```ruby
 # rectangle.rb
 class Rectangle
   attr_accessor :width, :height
-  
+
   def initialize(width, height)
     @width, @height = width, height
   end
-  
+
   def area
     width * height
   end
@@ -511,7 +512,7 @@ or
 # rectangle.rb
 class Rectangle
   attr_accessor :width, :height
-  
+
   def area
     width * height
   end
@@ -519,21 +520,21 @@ class Rectangle
 end
 ```  
 **Note**: If you have a method variable, and you have an instance variable, it's better to access the instance variable.  
-  
+
 ```ruby
 # rectangle.rb
 class Rectangle
   # attr_accessor :width      # we could remove this, and in this case, it will still be OK.
   attr_accessor :height
-  
+
   def initialize(width, height)
     @width, @height = width, height
   end
-  
+
   def area
     width * height            # now we are accessing the attribute width through the method width
   end
-  
+
   def width
     @width * 2.2
   end
@@ -562,15 +563,15 @@ foo.a = "Welcome!"
 class TestAttrMethods
   attr_accessor :b
   attr_writer   :c
-  
+
   def initialize(a, b="Hello!", c="Bonjour!")
     @a, @b, @c = a, b, c
   end
-  
+
   def greetings
     puts "#{@a} #{b} #{c}"
   end
-  
+
 end
 ```  
 ## Inheritance  
@@ -580,11 +581,11 @@ Classes can inherit from other classes which gives them access to their methods.
 class Cookie
   attr_accessor :sugar_amount
   attr_accessor :flour_amount
-  
+
   def initialize(sugar_amount, flour_amount)
     @sugar_amount, @flour_amount= sugar_amount, flour_amount
   end
-  
+
   def name
     puts "I'm a cookie"
   end
@@ -597,7 +598,7 @@ The class Oreo inherits the class Cookie
 require 'cookie.rb'
 class Oreo < Cookie
 
-  def name 
+  def name
     puts "I'm an oreo"
     super               # super calls the method with the exact same name in the parent class
   end
@@ -612,7 +613,7 @@ class Cream < Oreo
   def name
     super               # calls the method 'name' defined in class Oreo.
   end
-  
+
 end
 ```
 Test it out in irb  
@@ -671,9 +672,9 @@ end
 
 class SomeClass
   attr_accessor :name
-  
+
   include SpecialModule               # include a model to 'mixin' its methods
-  
+
   def do_something
     cool_method, name
   end
