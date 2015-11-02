@@ -1,4 +1,6 @@
-# Bootstrap Modal: User Sign In  
+# Bootstrap
+## Modal: User Sign In
+
 
 Makesure you have bootstrap.js included in your application.js
 ```javascript
@@ -195,7 +197,7 @@ Create a div on the application layout view to actually show to campaign modal
       #campaign.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
 ```
 ## Pagination  
-  
+
 Add the gem `gem 'will_paginate-bootstrap'` to your Gemfile.
 
 Add this line to your welcome index
