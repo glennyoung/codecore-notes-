@@ -1,6 +1,6 @@
 # Building a Rails CRUD
 
-<!-- Adding a line to rails_crud   -->
+<!-- Aadding a line to rails_crud   -->
 
 For the questions index page create an instance variable with all questions.  
 
