@@ -3,6 +3,8 @@ ALEX SMELLS LIKE TIDE DETERGENT!!!
 
 -Anne
 
+SKIP THIS FILE, you don't need it to stay on the rails of RUBY
+
 
 Zaid88 was here
 
